@@ -1,0 +1,190 @@
+/* ==========================================
+   VARIÁVEIS DE CORES (Paleta Oficial Solicitada)
+   ========================================== */
+:root {
+    --color-dark-green: #1b4965ff;
+    --color-medium-green: #5fa8d3ff;
+    --color-leaf-green: #cae9ffff;
+    --color-bright-green: #62b6cbff;
+    --color-lime-accent: #62b6cbff;
+    --color-yellow-highlight: #bee9e8ff;
+    --color-bg-light: #f4f9f4;
+    --color-text-dark: #1b2e23;
+    --color-card-bg: #ffffff;
+}
+
+
+/* ==========================================
+   ESTILOS GERAIS DO SITE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================== */
+header {
+    background: linear-gradient(135deg, var(--color-dark-green), var(--color-medium-green));
+    color: #ffffff;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* Destaque exclusivo para a sigla "IA" */
+.logo span {
+    color: var(--color-yellow-highlight);
+    text-shadow: 0 0 8px rgba(128, 206, 229, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--color-lime-accent);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL E ABAS
+   ========================================== */
+main {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   CARTÕES E TIPOGRAFIA
+   ========================================== */
+.card {
+    background-color: var(--color-card-bg);
+    border-left: 6px solid var(--color-leaf-green);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 127, 95, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+h1, h2, h3 {
+    color: var(--color-dark-green);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 3px solid var(--color-lime-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #334e3b;
+}
+
+ul.styled-list {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul.styled-list li {
+    margin-bottom: 0.5rem;
+    color: #334e3b;
+}
+
+code {
+    background-color: #abdbe4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--color-dark-green);
+}
+
+/* Badges e Destaques */
+.badge {
+    background-color: var(--color-bright-green);
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-dark-green);
+    color: #ffffff;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}

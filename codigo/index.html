@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InteligêncIA - Detecção de Intrusão em Redes</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho de Navegação com todas as etapas -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                Inteligência<span>IA</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showTab('inicio')" class="active">Início</a></li>
+                    <li><a href="#" onclick="showTab('etapa1')">1. Análise Exploratória</a></li>
+                    <li><a href="#" onclick="showTab('etapa2')">2. Pré-processamento</a></li>
+                    <li><a href="#" onclick="showTab('etapa3')">3. Classificadores</a></li>
+                    <li><a href="#" onclick="showTab('etapa4')">4. Competição & Relatório</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Início / Visão Geral -->
+        <section id="inicio" class="tab-content active">
+            <div class="card">
+                <span class="badge">Trabalho em Competição</span>
+                <h1>Bem-vindo ao Projeto InteligêncIA</h1>
+                <p>Este espaço web foi desenvolvido para documentar e apresentar de forma estruturada todas as etapas do trabalho prático da disciplina de Inteligência Artificial sobre <strong>Detecção de Intrusão em Redes de Computadores</strong>[cite: 1].</p>
+                <p>Navegue pelas abas acima para acompanhar a evolução metodológica, desde a análise exploratória dos dados até a avaliação final na competição[cite: 4].</p>
+            </div>
+        </section>
+
+        <!-- Página 1: Etapa 1 (Conforme solicitado) -->
+        <section id="etapa1" class="tab-content">
+            <div class="card">
+                <span class="badge">Etapa 1 — Data: 24/10 (Valor: 2,00)</span>[cite: 4]
+                <h1>1. Análise Exploratória dos Dados (EDA)</h1>
+                <p>A primeira etapa consiste na caracterização aprofundada da base de dados <strong>NSL-KDD</strong>, versão corrigida do clássico KDD Cup 99 focada em segurança da informação[cite: 1].</p>
+                
+                <h2>Objetivos da Etapa</h2>
+                <ul class="styled-list">
+                    <li>Compreender a estrutura de 41 atributos descritivos e o atributo de classe[cite: 2].</li>
+                    <li>Identificar o forte desbalanceamento entre tráfego normal e classes de ataques raros (ex.: U2R)[cite: 2].</li>
+                    <li>Analisar atributos categóricos fundamentais como <code>protocol_type</code>, <code>service</code> e <code>flag</code>[cite: 2].</li>
+                    <li>Investigar correlações e prevenir riscos críticos de <strong>vazamento de dados (data leakage)</strong> antes da modelagem[cite: 3, 4].</li>
+                </ul>
+
+                <h2>Entregável</h2>
+                <p>Notebook Jupyter contendo a EDA completa e o diagnóstico preliminar dos dados[cite: 4].</p>
+            </div>
+        </section>
+
+        <!-- Página 2: Etapa 2 -->
+        <section id="etapa2" class="tab-content">
+            <div class="card">
+                <span class="badge">Etapa 2 — Data: 07/11 (Valor: 4,00)</span>[cite: 4]
+                <h1>2. Pré-processamento e Tratamento</h1>
+                <p>Implementação e comparação de técnicas de balanceamento, codificação simbólico-numérica, tratamento de redundâncias e redução de dimensionalidade[cite: 4].</p>
+            </div>
+        </section>
+
+        <!-- Página 3: Etapa 3 -->
+        <section id="etapa3" class="tab-content">
+            <div class="card">
+                <span class="badge">Etapa 3 — Data: 21/11 (Valor: 4,00)</span>[cite: 4]
+                <h1>3. Construção e Avaliação dos Classificadores</h1>
+                <p>Treinamento de pelo menos 3 algoritmos diferentes, validação cruzada rigorosa utilizando estritamente o conjunto de treino e comparação via F1-score macro[cite: 3, 4].</p>
+            </div>
+        </section>
+
+        <!-- Página 4: Etapa 4 -->
+        <section id="etapa4" class="tab-content">
+            <div class="card">
+                <span class="badge">Etapa 4 — Data: 28/11 (Valor: 5,00)</span>[cite: 4]
+                <h1>4. Competição e Relatório Final</h1>
+                <p>Avaliação final no conjunto de teste <code>KDDTest+</code>, explicabilidade do melhor modelo e entrega do relatório consolidado de 3 a 5 páginas[cite: 3, 4].</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 InteligêncIA - Competição de Detecção de Intrusão em Redes.</p>
+    </footer>
+
+    <!-- Script Simples para Alternar as Abas -->
+    <script>
+        function showTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
