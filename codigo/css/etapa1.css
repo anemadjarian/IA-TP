@@ -1,0 +1,47 @@
+/* Estilos do visualizador da etapa 1. Todas as classes começam com "viz-" para não colidir com style.css */
+
+.viz-seletores { display: grid; gap: 1rem; margin: 1.5rem 0; }
+.viz-seletores h2 { font-size: 1rem; margin: 0 0 .4rem; }
+.viz-grupo { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.viz-grupo button {
+    font: inherit; color: inherit; cursor: pointer;
+    padding: .4rem .8rem; border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, .55); background: transparent;
+}
+.viz-grupo button:hover { background: rgba(128, 128, 128, .15); }
+.viz-grupo button[aria-pressed="true"] {
+    font-weight: 700; border-width: 2px; padding: calc(.4rem - 1px) calc(.8rem - 1px);
+    background: rgba(128, 128, 128, .28);
+}
+.viz-grupo button:focus-visible,
+.viz-tabela-rolavel:focus-visible,
+#viz-tabela tbody tr:focus-visible { outline: 3px solid #2d6cdf; outline-offset: 2px; }
+
+.viz-explicacao { border-left: 4px solid rgba(128, 128, 128, .6); padding: .2rem 1rem; margin: 1rem 0; max-width: 70ch; }
+.viz-explicacao h2 { font-size: 1.1rem; margin: .4rem 0; }
+
+.viz-contagem { margin: 1.2rem 0 .4rem; font-size: .95rem; }
+.viz-tabela-rolavel { overflow-x: auto; border: 1px solid rgba(128, 128, 128, .4); border-radius: 6px; }
+#viz-tabela { border-collapse: collapse; width: 100%; font-size: .9rem; font-variant-numeric: tabular-nums; }
+#viz-tabela th, #viz-tabela td { padding: .45rem .7rem; text-align: right; white-space: nowrap; border-bottom: 1px solid rgba(128, 128, 128, .25); }
+#viz-tabela th { text-align: right; font-weight: 700; background: rgba(128, 128, 128, .18); }
+#viz-tabela td.viz-texto, #viz-tabela th.viz-texto { text-align: left; }
+#viz-tabela tbody tr { cursor: pointer; }
+#viz-tabela tbody tr:hover { background: rgba(128, 128, 128, .12); }
+#viz-tabela tbody tr[aria-selected="true"] { background: rgba(45, 108, 223, .18); }
+#viz-tabela td.viz-destaque { background: rgba(240, 170, 0, .3); font-weight: 700; }
+.viz-anomalia { color: #c0392b; font-weight: 700; }
+.viz-normal { color: #1e8449; font-weight: 700; }
+
+.viz-motivo { margin-top: 1rem; padding: .8rem 1rem; border: 1px solid rgba(128, 128, 128, .4); border-radius: 6px; max-width: 80ch; }
+.viz-motivo h3 { font-size: 1rem; margin: 0 0 .4rem; }
+.viz-etiquetas { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .5rem; padding: 0; list-style: none; }
+.viz-etiquetas li { padding: .1rem .6rem; border: 1px solid rgba(128, 128, 128, .55); border-radius: 999px; font-size: .85rem; }
+
+.viz-distribuicao { margin: .8rem 0; }
+.viz-distribuicao h3 { font-size: .95rem; margin: 0 0 .3rem; }
+.viz-linha-barra { display: grid; grid-template-columns: 9rem 1fr 4.5rem; gap: .5rem; align-items: center; font-size: .85rem; margin: .15rem 0; }
+.viz-trilha { background: rgba(128, 128, 128, .2); border-radius: 3px; height: .8rem; }
+.viz-trilha span { display: block; height: 100%; background: #2d6cdf; border-radius: 3px; }
+.viz-linha-barra b { text-align: right; font-weight: 400; }

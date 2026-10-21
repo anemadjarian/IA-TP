@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 1 - Visualizador da base | InteligêncIA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/etapa1.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Inteligência<span>IA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="etapa1.html" class="active" aria-current="page">1. Análise Exploratória</a></li>
+                    <li><a href="index.html#etapa2">2. Pré-processamento</a></li>
+                    <li><a href="index.html#etapa3">3. Classificadores</a></li>
+                    <li><a href="index.html#etapa4">4. Competição & Relatório</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="card viz">
+            <span class="badge">Etapa 1 — Data: 24/10 (Valor: 2,00)</span>
+            <h1>Visualizador da base NSL-KDD</h1>
+            <p>Estas são 15 linhas reais de <code>base_treino.csv</code>, escolhidas para mostrar um pouco de cada característica da base. Use os seletores para escolher quais colunas ver e quais instâncias destacar. Clique em uma linha para ver por que ela está aqui.</p>
+
+            <div class="viz-seletores">
+                <div>
+                    <h2 id="titulo-seletor-colunas">Colunas</h2>
+                    <div id="seletor-colunas" class="viz-grupo" role="group" aria-labelledby="titulo-seletor-colunas"></div>
+                </div>
+                <div>
+                    <h2 id="titulo-seletor-instancias">Instâncias</h2>
+                    <div id="seletor-instancias" class="viz-grupo" role="group" aria-labelledby="titulo-seletor-instancias"></div>
+                </div>
+            </div>
+
+            <div id="viz-explicacao" class="viz-explicacao" aria-live="polite">
+                <h2 id="viz-explicacao-titulo"></h2>
+                <p id="viz-explicacao-texto"></p>
+                <div id="viz-panorama" hidden></div>
+            </div>
+
+            <p id="viz-contagem" class="viz-contagem"></p>
+            <div class="viz-tabela-rolavel" tabindex="0" role="region" aria-label="Tabela com as instâncias da amostra">
+                <table id="viz-tabela"></table>
+            </div>
+
+            <div id="viz-motivo" class="viz-motivo" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 InteligêncIA - Competição de Detecção de Intrusão em Redes.</p>
+    </footer>
+
+    <script src="dados/amostra_instancias.js"></script>
+    <script src="js/etapa1.js"></script>
+</body>
+</html>
