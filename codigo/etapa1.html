@@ -26,31 +26,49 @@
 
     <main>
         <section class="card viz">
-            <span class="badge">Etapa 1 — Data: 24/10 (Valor: 2,00)</span>
-            <h1>Visualizador da base NSL-KDD</h1>
-            <p>Estas são 15 linhas reais de <code>base_treino.csv</code>, escolhidas para mostrar um pouco de cada característica da base. Use os seletores para escolher quais colunas ver e quais instâncias destacar. Clique em uma linha para ver por que ela está aqui.</p>
+            <h1>Visualizador interativo da base NSL-KDD</h1>
+            <p>Esta página deixa você explorar a base de dados do trabalho sem abrir o notebook. Ela mostra uma tabela com 15 linhas reais de <code>base_treino.csv</code>, escolhidas à mão entre as 125.973 da base para ilustrar cada característica que vamos analisar: tipos de atributo, inconsistências, redundâncias, desbalanceamento e valores extremos.</p>
 
-            <div class="viz-seletores">
-                <div>
-                    <h2 id="titulo-seletor-colunas">Colunas</h2>
-                    <div id="seletor-colunas" class="viz-grupo" role="group" aria-labelledby="titulo-seletor-colunas"></div>
-                </div>
-                <div>
-                    <h2 id="titulo-seletor-instancias">Instâncias</h2>
-                    <div id="seletor-instancias" class="viz-grupo" role="group" aria-labelledby="titulo-seletor-instancias"></div>
-                </div>
-            </div>
+            <h2>Três palavras para começar</h2>
+            <dl class="viz-definicoes">
+                <div><dt>Instância</dt><dd>Uma linha da tabela: uma conexão de rede registrada na base.</dd></div>
+                <div><dt>Atributo</dt><dd>Uma coluna da tabela: uma característica medida dessa conexão, como o protocolo ou o número de bytes.</dd></div>
+                <div><dt>Classe</dt><dd>A última coluna: diz se a conexão é normal ou uma anomalia. É o que os modelos vão tentar prever.</dd></div>
+            </dl>
+
+            <h2>Como usar</h2>
+            <ol class="viz-passos">
+                <li>Em <strong>Colunas</strong>, escolha um grupo de atributos. A tabela passa a mostrar só as colunas desse grupo (a classe aparece sempre).</li>
+                <li>Em <strong>Instâncias</strong>, escolha uma característica da base. A tabela passa a mostrar só as linhas que ilustram esse ponto.</li>
+                <li>Leia o quadro de explicação que aparece abaixo dos seletores: ele diz o que a categoria escolhida significa e por que ela importa.</li>
+                <li>Clique em uma linha da tabela (ou use Tab e Enter) para ver por que ela foi escolhida.</li>
+            </ol>
+
+            <h2 id="titulo-seletor-colunas">1. Colunas: o que mostrar na tabela</h2>
+            <p class="viz-ajuda">Cada grupo tem uma cor. Em "Todos os atributos", o cabeçalho de cada coluna usa a cor do grupo dela.</p>
+            <div id="seletor-colunas" class="viz-grupo" role="radiogroup" aria-labelledby="titulo-seletor-colunas"></div>
+
+            <h2 id="titulo-seletor-instancias">2. Instâncias: quais linhas mostrar</h2>
+            <p class="viz-ajuda">Cada característica também tem uma cor, usada para marcar as linhas e as células que a ilustram.</p>
+            <div id="seletor-instancias" class="viz-grupo" role="radiogroup" aria-labelledby="titulo-seletor-instancias"></div>
 
             <div id="viz-explicacao" class="viz-explicacao" aria-live="polite">
                 <h2 id="viz-explicacao-titulo"></h2>
-                <p id="viz-explicacao-texto"></p>
+                <div id="viz-explicacao-texto"></div>
                 <div id="viz-panorama" hidden></div>
             </div>
 
+            <h2>Tabela</h2>
             <p id="viz-contagem" class="viz-contagem"></p>
             <div class="viz-tabela-rolavel" tabindex="0" role="region" aria-label="Tabela com as instâncias da amostra">
                 <table id="viz-tabela"></table>
             </div>
+            <ul class="viz-legenda">
+                <li><span class="viz-amostra cor-inconsistencia"></span>Célula com fundo colorido: onde está o ponto de interesse da instância</li>
+                <li><span class="viz-amostra" style="background:#b9e3ee"></span>Linha selecionada</li>
+                <li>Primeira coluna (linha): posição da instância em <code>base_treino.csv</code>, começando em 0</li>
+                <li>Role a tabela para o lado para ver todas as colunas</li>
+            </ul>
 
             <div id="viz-motivo" class="viz-motivo" aria-live="polite"></div>
         </section>
